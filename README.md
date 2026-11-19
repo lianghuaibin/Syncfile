@@ -57,7 +57,25 @@ server.py           电脑端接收服务器（Python 标准库，单文件）
 ./gradlew assembleDebug     # 产物: app/build/outputs/apk/debug/app-debug.apk
 ```
 
-（需 Android SDK；`local.properties` 中已指定本机 SDK 路径）
+（需 Android SDK；`local.properties` 中已指定本机 SDK 路径，克隆后按本机 SDK 位置修改）
+
+## CI 自动构建
+
+仓库已配置 GitHub Actions（`.github/workflows/build.yml`）：
+
+- **push 到 `main`**：自动构建 debug APK，在 Actions 页面底部
+  Artifacts 处可下载（名为 `Syncfile-debug`）
+- **打 `v*` 标签**：额外创建正式 Release 并附上 APK
+
+发布新版本只需：
+
+```bash
+git tag v1.0
+git push origin v1.0
+```
+
+片刻后 Release 页面（`https://github.com/lianghuaibin/Syncfile/releases`）
+就会出现带 APK 的正式版本。
 
 ## 安全说明
 
