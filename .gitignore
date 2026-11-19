@@ -1,0 +1,14 @@
+# Build
+build/
+.gradle/
+app/build/
+
+# IDE
+.idea/
+*.iml
+
+# Machine-specific
+local.properties
+
+# OS
+.DS_Store
